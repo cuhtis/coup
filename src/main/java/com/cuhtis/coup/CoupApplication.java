@@ -1,6 +1,8 @@
 package com.cuhtis.coup;
 
+import com.cuhtis.coup.graphql.resolvers.Query;
 import graphql.Scalars;
+import graphql.kickstart.tools.SchemaParser;
 import graphql.schema.GraphQLObjectType;
 import graphql.schema.GraphQLSchema;
 import org.springframework.boot.SpringApplication;
@@ -16,10 +18,10 @@ public class CoupApplication {
 
     @Bean
     GraphQLSchema schema() {
-        return GraphQLSchema.newSchema()
-            .query(GraphQLObjectType.newObject()
-                .name("Query")
-                .build())
-            .build();
+        return SchemaParser.newParser()
+			.file("schema.graphql")
+			.resolvers(new Query())
+            .build()
+			.makeExecutableSchema();
     }
 }
