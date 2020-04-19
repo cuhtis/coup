@@ -8,4 +8,6 @@ public interface IDeck {
     public List<ICard> getCards();
 
     public int getCardCount();
+
+    public ICard takeCard();
 }

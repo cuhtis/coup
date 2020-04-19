@@ -5,13 +5,13 @@ type Query {
 }
 
 type Action {
-    name: String!
     description: String!
+    name: String!
 }
 
 type Card {
-    name: String!
     actions: [Action!]!
+    name: String!
 }
 
 type Deck {
@@ -24,6 +24,7 @@ type Game {
 }
 
 type Player {
-    coin_count: Int!
     actions: [Action!]!
+    cards: [Card!]!
+    coin_count: Int!
 }
