@@ -12,7 +12,7 @@ public class BaseGame implements IGame {
     protected List<IPlayer> mPlayers = new ArrayList<>();
 
     public BaseGame(IDeck deck) {
-        this.mDeck = deck;
+        this.mDeck = deck.shuffle();
     }
 
     public IDeck getDeck() {

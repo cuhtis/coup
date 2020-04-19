@@ -10,4 +10,6 @@ public interface IDeck {
     public int getCardCount();
 
     public ICard takeCard();
+
+    public IDeck shuffle();
 }
