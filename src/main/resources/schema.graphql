@@ -11,6 +11,7 @@ type Action {
 
 type Card {
     name: String!
+    actions: [Action!]!
 }
 
 type Deck {

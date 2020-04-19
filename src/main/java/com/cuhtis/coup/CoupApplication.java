@@ -2,6 +2,7 @@ package com.cuhtis.coup;
 
 import com.cuhtis.coup.graphql.resolvers.DeckResolver;
 import com.cuhtis.coup.graphql.resolvers.QueryResolver;
+import com.cuhtis.coup.models.actions.interfaces.IAction;
 import com.cuhtis.coup.models.actions.ActionRepository;
 import com.cuhtis.coup.models.actions.interfaces.IAction;
 import com.cuhtis.coup.models.cards.CardRepository;

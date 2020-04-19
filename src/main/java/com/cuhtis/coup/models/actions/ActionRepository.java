@@ -2,6 +2,7 @@ package com.cuhtis.coup.models.actions;
 
 import com.cuhtis.coup.models.actions.interfaces.IAction;
 import graphql.kickstart.tools.GraphQLQueryResolver;
+import com.cuhtis.coup.models.actions.interfaces.IAction;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

@@ -1,5 +1,6 @@
 package com.cuhtis.coup.graphql.resolvers;
 
+import com.cuhtis.coup.models.actions.interfaces.IAction;
 import com.cuhtis.coup.models.actions.ActionRepository;
 import com.cuhtis.coup.models.actions.interfaces.IAction;
 import com.cuhtis.coup.models.cards.CardRepository;
