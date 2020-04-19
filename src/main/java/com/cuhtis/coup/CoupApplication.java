@@ -31,7 +31,7 @@ public class CoupApplication {
 		ActionRepository actionRepository = new ActionRepository();
 		CardRepository cardRepository = new CardRepository();
         return SchemaParser.newParser()
-			.file("schema.graphql")
+			.file("schema.graphqls")
 			.resolvers(
 				new QueryResolver(actionRepository, cardRepository),
 				new DeckResolver(),
