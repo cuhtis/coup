@@ -1,7 +1,7 @@
 type Query {
     actions: [Action!]!
     cards: [Card!]!
-    standard_deck: Deck!
+    standard_game: Game!
 }
 
 type Action {
@@ -16,4 +16,14 @@ type Card {
 
 type Deck {
     card_count: Int!
+}
+
+type Game {
+    deck: Deck!
+    players: [Player!]!
+}
+
+type Player {
+    coin_count: Int!
+    actions: [Action!]!
 }
