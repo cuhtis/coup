@@ -37,6 +37,6 @@ public class QueryResolver implements GraphQLQueryResolver {
     }
 
     public IDeck standard_deck() {
-        return StandardDeck.create();
+        return new StandardDeck();
     }
 }

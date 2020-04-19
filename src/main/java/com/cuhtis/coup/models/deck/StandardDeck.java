@@ -11,28 +11,26 @@ import java.util.List;
 
 public class StandardDeck extends BaseDeck {
 
-    protected StandardDeck(List<ICard> cards) {
-        super(cards);
-    }
+    public StandardDeck() {
+        super();
 
-    public static StandardDeck create() {
         // Three of each card type, fifteen cards total
-        List<ICard> cards = Arrays.asList(
-            new AmbassadorCard(),
-            new AmbassadorCard(),
-            new AmbassadorCard(),
-            new AssassinCard(),
-            new AssassinCard(),
-            new AssassinCard(),
-            new CaptainCard(),
-            new CaptainCard(),
-            new CaptainCard(),
-            new ContessaCard(),
-            new ContessaCard(),
-            new ContessaCard(),
-            new DukeCard(),
-            new DukeCard(),
-            new DukeCard());
-        return new StandardDeck(cards);
+        this.mCards.addAll(
+            Arrays.asList(
+                new AmbassadorCard(),
+                new AmbassadorCard(),
+                new AmbassadorCard(),
+                new AssassinCard(),
+                new AssassinCard(),
+                new AssassinCard(),
+                new CaptainCard(),
+                new CaptainCard(),
+                new CaptainCard(),
+                new ContessaCard(),
+                new ContessaCard(),
+                new ContessaCard(),
+                new DukeCard(),
+                new DukeCard(),
+                new DukeCard()));
     }
 }

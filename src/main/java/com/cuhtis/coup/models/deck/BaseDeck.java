@@ -6,11 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class BaseDeck implements IDeck {
-    private List<ICard> mCards;
-
-    protected BaseDeck(List<ICard> cards) {
-        this.mCards = cards;
-    }
+    protected List<ICard> mCards = new ArrayList<>();
 
     public List<ICard> getCards() {
         return this.mCards;
