@@ -1,7 +1,12 @@
 type Query {
     cards: [Card!]!
+    standard_deck: Deck!
 }
 
 type Card {
     name: String!
+}
+
+type Deck {
+    card_count: Int!
 }

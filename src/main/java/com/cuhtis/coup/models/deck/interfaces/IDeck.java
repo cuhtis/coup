@@ -6,4 +6,6 @@ import java.util.List;
 public interface IDeck {
 
     public List<ICard> getCards();
+
+    public int getCardCount();
 }

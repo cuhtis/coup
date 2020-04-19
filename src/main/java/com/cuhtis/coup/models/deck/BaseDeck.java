@@ -15,4 +15,8 @@ public abstract class BaseDeck implements IDeck {
     public List<ICard> getCards() {
         return this.mCards;
     }
+
+    public int getCardCount() {
+        return this.mCards.size();
+    }
 }

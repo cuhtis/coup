@@ -2,6 +2,8 @@ package com.cuhtis.coup.graphql.resolvers;
 
 import com.cuhtis.coup.models.cards.BaseCard;
 import com.cuhtis.coup.models.cards.CardRepository;
+import com.cuhtis.coup.models.deck.BaseDeck;
+import com.cuhtis.coup.models.deck.StandardDeck;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,5 +23,9 @@ public class Query implements GraphQLQueryResolver {
 
     public List<BaseCard> cards() {
         return this.mCardRepository.getAll();
+    }
+
+    public BaseDeck standard_deck() {
+        return StandardDeck.create();
     }
 }
