@@ -1,3 +1,27 @@
 type Query {
+    cards: [ICard!]!
+}
 
+interface ICard {
+    name: String!
+}
+
+type AmbassadorCard implements ICard {
+    name: String!
+}
+
+type AssassinCard implements ICard {
+    name: String!
+}
+
+type CaptainCard implements ICard {
+    name: String!
+}
+
+type ContessaCard implements ICard {
+    name: String!
+}
+
+type DukeCard implements ICard {
+    name: String!
 }

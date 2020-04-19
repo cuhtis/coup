@@ -1,6 +1,12 @@
 package com.cuhtis.coup;
 
 import com.cuhtis.coup.graphql.resolvers.Query;
+import com.cuhtis.coup.models.cards.AmbassadorCard;
+import com.cuhtis.coup.models.cards.AssassinCard;
+import com.cuhtis.coup.models.cards.CaptainCard;
+import com.cuhtis.coup.models.cards.CardRepository;
+import com.cuhtis.coup.models.cards.ContessaCard;
+import com.cuhtis.coup.models.cards.DukeCard;
 import graphql.Scalars;
 import graphql.kickstart.tools.SchemaParser;
 import graphql.schema.GraphQLObjectType;
@@ -18,9 +24,15 @@ public class CoupApplication {
 
     @Bean
     GraphQLSchema schema() {
+		CardRepository cardRepository = new CardRepository();
         return SchemaParser.newParser()
 			.file("schema.graphql")
-			.resolvers(new Query())
+			.resolvers(new Query(cardRepository))
+    		.dictionary("AmbassadorCard", AmbassadorCard.class)
+    		.dictionary("AssassinCard", AssassinCard.class)
+    		.dictionary("CaptainCard", CaptainCard.class)
+    		.dictionary("ContessaCard", ContessaCard.class)
+    		.dictionary("DukeCard", DukeCard.class)
             .build()
 			.makeExecutableSchema();
     }
