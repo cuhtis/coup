@@ -1,6 +1,6 @@
 package com.cuhtis.coup.graphql.resolvers;
 
-import com.cuhtis.coup.models.cards.interfaces.ICard;
+import com.cuhtis.coup.models.cards.BaseCard;
 import com.cuhtis.coup.models.cards.CardRepository;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class Query implements GraphQLQueryResolver {
         this.mCardRepository = cardRepository;
     }
 
-    public List<ICard> cards() {
+    public List<BaseCard> cards() {
         return this.mCardRepository.getAll();
     }
 }
