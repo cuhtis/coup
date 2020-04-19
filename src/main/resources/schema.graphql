@@ -15,7 +15,7 @@ type Card {
 }
 
 type Deck {
-    card_count: Int!
+    cards: [Card!]!
 }
 
 type Game {
