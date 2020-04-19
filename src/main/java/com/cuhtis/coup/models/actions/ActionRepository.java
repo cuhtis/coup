@@ -1,5 +1,6 @@
 package com.cuhtis.coup.models.actions;
 
+import com.cuhtis.coup.models.actions.interfaces.IAction;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ActionRepository {
 
-    public List<BaseAction> getAll() {
+    public List<IAction> getAll() {
         return Arrays.asList(
             new AssassinateAction(),
             new CoupAction(),

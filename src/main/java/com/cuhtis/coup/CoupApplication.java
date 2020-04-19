@@ -3,10 +3,10 @@ package com.cuhtis.coup;
 import com.cuhtis.coup.graphql.resolvers.DeckResolver;
 import com.cuhtis.coup.graphql.resolvers.QueryResolver;
 import com.cuhtis.coup.models.actions.ActionRepository;
-import com.cuhtis.coup.models.actions.BaseAction;
-import com.cuhtis.coup.models.cards.BaseCard;
+import com.cuhtis.coup.models.actions.interfaces.IAction;
 import com.cuhtis.coup.models.cards.CardRepository;
-import com.cuhtis.coup.models.deck.BaseDeck;
+import com.cuhtis.coup.models.cards.interfaces.ICard;
+import com.cuhtis.coup.models.deck.interfaces.IDeck;
 import graphql.Scalars;
 import graphql.kickstart.tools.SchemaParser;
 import graphql.schema.GraphQLObjectType;
@@ -31,9 +31,9 @@ public class CoupApplication {
 			.resolvers(
 				new QueryResolver(actionRepository, cardRepository),
 				new DeckResolver())
-    		.dictionary("Action", BaseAction.class)
-    		.dictionary("Card", BaseCard.class)
-    		.dictionary("Deck", BaseDeck.class)
+    		.dictionary("Action", IAction.class)
+    		.dictionary("Card", ICard.class)
+    		.dictionary("Deck", IDeck.class)
             .build()
 			.makeExecutableSchema();
     }

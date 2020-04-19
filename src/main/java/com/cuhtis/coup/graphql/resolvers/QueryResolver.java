@@ -1,10 +1,10 @@
 package com.cuhtis.coup.graphql.resolvers;
 
 import com.cuhtis.coup.models.actions.ActionRepository;
-import com.cuhtis.coup.models.actions.BaseAction;
-import com.cuhtis.coup.models.cards.BaseCard;
+import com.cuhtis.coup.models.actions.interfaces.IAction;
 import com.cuhtis.coup.models.cards.CardRepository;
-import com.cuhtis.coup.models.deck.BaseDeck;
+import com.cuhtis.coup.models.cards.interfaces.ICard;
+import com.cuhtis.coup.models.deck.interfaces.IDeck;
 import com.cuhtis.coup.models.deck.StandardDeck;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import java.util.ArrayList;
@@ -27,15 +27,15 @@ public class QueryResolver implements GraphQLQueryResolver {
         this.mCardRepository = cardRepository;
     }
 
-    public List<BaseAction> actions() {
+    public List<IAction> actions() {
         return this.mActionRepository.getAll();
     }
 
-    public List<BaseCard> cards() {
+    public List<ICard> cards() {
         return this.mCardRepository.getAll();
     }
 
-    public BaseDeck standard_deck() {
+    public IDeck standard_deck() {
         return StandardDeck.create();
     }
 }
