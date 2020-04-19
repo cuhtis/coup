@@ -1,5 +1,7 @@
 package com.cuhtis.coup.graphql.resolvers;
 
+import com.cuhtis.coup.models.actions.ActionRepository;
+import com.cuhtis.coup.models.actions.BaseAction;
 import com.cuhtis.coup.models.cards.BaseCard;
 import com.cuhtis.coup.models.cards.CardRepository;
 import com.cuhtis.coup.models.deck.BaseDeck;
@@ -15,10 +17,18 @@ import org.springframework.stereotype.Component;
 public class QueryResolver implements GraphQLQueryResolver {
 
     @Autowired
+    private ActionRepository mActionRepository;
+    @Autowired
     private CardRepository mCardRepository;
 
-    public QueryResolver(CardRepository cardRepository) {
+    public QueryResolver(
+        ActionRepository actionRepository, CardRepository cardRepository) {
+        this.mActionRepository = actionRepository;
         this.mCardRepository = cardRepository;
+    }
+
+    public List<BaseAction> actions() {
+        return this.mActionRepository.getAll();
     }
 
     public List<BaseCard> cards() {

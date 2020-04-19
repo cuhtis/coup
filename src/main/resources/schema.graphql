@@ -1,6 +1,12 @@
 type Query {
+    actions: [Action!]!
     cards: [Card!]!
     standard_deck: Deck!
+}
+
+type Action {
+    name: String!
+    description: String!
 }
 
 type Card {
