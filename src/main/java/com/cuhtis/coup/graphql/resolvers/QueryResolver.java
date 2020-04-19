@@ -12,12 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Query implements GraphQLQueryResolver {
+public class QueryResolver implements GraphQLQueryResolver {
 
     @Autowired
     private CardRepository mCardRepository;
 
-    public Query(CardRepository cardRepository) {
+    public QueryResolver(CardRepository cardRepository) {
         this.mCardRepository = cardRepository;
     }
 
