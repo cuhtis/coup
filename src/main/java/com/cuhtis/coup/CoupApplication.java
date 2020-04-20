@@ -15,6 +15,7 @@ import graphql.Scalars;
 import graphql.kickstart.tools.SchemaParser;
 import graphql.schema.GraphQLObjectType;
 import graphql.schema.GraphQLSchema;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -22,20 +23,22 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class CoupApplication {
 
+	@Autowired private DeckResolver mDeckResolver;
+	@Autowired private PlayerResolver mPlayerResolver;
+	@Autowired private QueryResolver mQueryResolver;
+
 	public static void main(String[] args) {
 		SpringApplication.run(CoupApplication.class, args);
 	}
 
     @Bean
     GraphQLSchema schema() {
-		ActionRepository actionRepository = new ActionRepository();
-		CardRepository cardRepository = new CardRepository();
         return SchemaParser.newParser()
 			.file("schema.graphqls")
 			.resolvers(
-				new QueryResolver(actionRepository, cardRepository),
-				new DeckResolver(),
-				new PlayerResolver())
+				this.mDeckResolver,
+				this.mPlayerResolver,
+				this.mQueryResolver)
     		.dictionary("Action", IAction.class)
     		.dictionary("Card", ICard.class)
     		.dictionary("Deck", IDeck.class)

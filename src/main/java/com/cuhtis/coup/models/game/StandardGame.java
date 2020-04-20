@@ -5,7 +5,15 @@ import com.cuhtis.coup.models.deck.StandardDeck;
 import com.cuhtis.coup.models.player.interfaces.IPlayer;
 import com.cuhtis.coup.models.player.StandardPlayer;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
+@Entity
+@Table(name = "standard_games")
 public class StandardGame extends BaseGame {
 
     public StandardGame(int numPlayers) {
