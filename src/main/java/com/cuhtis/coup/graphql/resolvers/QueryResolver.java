@@ -31,8 +31,8 @@ public class QueryResolver implements GraphQLQueryResolver {
         return this.mCardRepository.getAll();
     }
 
-    public IGame game() {
-        Optional<StandardGame> game = this.mStandardGameRepository.findById(1);
+    public IGame game(int id) {
+        Optional<StandardGame> game = this.mStandardGameRepository.findById(id);
         if (game.isPresent()) {
             return game.get();
         } else {

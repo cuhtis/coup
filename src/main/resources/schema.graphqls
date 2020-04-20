@@ -1,7 +1,7 @@
 type Query {
     actions: [Action!]!
     cards: [Card!]!
-    game: Game
+    game(id: Int!): Game
     standard_game: Game!
 }
 
